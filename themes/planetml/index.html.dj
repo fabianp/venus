@@ -35,7 +35,7 @@
 
   <ul>
     {% for channel in Channels %}
-    <li>{{ channel.title|safe }} by {{ channel.author_name }}</li>
+    <li><a href='{{channel.link}}'>{{channel.name}}</a></li>
     {% endfor %}
   </ul>
 </div>
