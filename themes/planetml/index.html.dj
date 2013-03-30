@@ -27,8 +27,7 @@
 <h1>{{ name }}</h1>
 
 <p class="updated">
-  last updated by <a href="http://intertwingly.net/code/venus/">Venus</a> 
-  on {{ date }}
+  last updated  on {{ date }}
 </p>
 
 <div id="channels">
@@ -58,6 +57,8 @@
   </p>
 </div>
 {% endfor %}
+
+Powered by <a href="http://intertwingly.net/code/venus/">Venus</a>.
 
 </body>
 </html>
