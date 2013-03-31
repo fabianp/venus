@@ -9,6 +9,10 @@ h1 {
  margin-bottom: 0px;
 }
 
+#header {
+    margin-bottom: 50px;
+}
+
 .updated, .entry-tools { 
  font: .8em Verdana, Arial, sans-serif;
  margin-bottom: 2em;

@@ -24,11 +24,10 @@
 
 <body>
 
+<div id="header">
 <h1>{{ name }}</h1>
-
-<p class="updated">
-  last updated  on {{ date }}
-</p>
+<h3>Voices from the Machine Learning community</h3>
+</div>
 
 <div id="channels">
   <h2>Feeds</h2>
@@ -38,6 +37,9 @@
     <li><a href='{{channel.link}}'>{{channel.name}}</a></li>
     {% endfor %}
   </ul>
+  <p class="updated">
+    Last updated  on {{ date }}
+  </p>
 </div>
 
 {% for item in Items %}
