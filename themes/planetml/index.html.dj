@@ -18,7 +18,7 @@
     });
   </script>
 
-          <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
   
 </head>
 
@@ -38,7 +38,7 @@
     {% endfor %}
   </ul>
   <p class="updated">
-    Last updated  on {{ date }}
+    Last updated  on {{ date }} UTC.
   </p>
 </div>
 
