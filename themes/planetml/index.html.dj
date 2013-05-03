@@ -29,22 +29,10 @@
 <h3>Voices from the Machine Learning community</h3>
 </div>
 
-<div id="channels">
-  <h2>Feeds</h2>
-
-  <ul>
-    {% for channel in Channels %}
-    <li><a href='{{channel.link}}'>{{channel.name}}</a></li>
-    {% endfor %}
-  </ul>
-  <p class="updated">
-    Last updated  on {{ date }} UTC.
-  </p>
-</div>
 
 {% for item in Items %}
 {% ifchanged item.channel_name %}
-<h3>{{ item.channel_name }}</h3>
+<h2 class="channel_name"><a href="{{item.link}}">{{ item.channel_name }}</a></h2>
 {% endifchanged %}
 
 <div class="entry">
@@ -59,6 +47,17 @@
   </p>
 </div>
 {% endfor %}
+
+<div id="channels">
+  <h2>Feeds</h2>
+    {% for channel in Channels %}
+    <a href='{{channel.link}}'>{{channel.name}}</a> 
+    {% endfor %}
+  <p class="updated">
+    Last updated  on {{ date }} UTC.
+  </p>
+</div>
+
 
 Powered by <a href="http://intertwingly.net/code/venus/">Venus</a>.
 
