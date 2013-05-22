@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 
 body { 
@@ -13,7 +14,7 @@ body {
 
 #channels { 
  float: right;
- width: 30%;
+ width: 20%;
  padding: 20px;
  margin: 20px;
  margin-top: 0px;
@@ -74,6 +75,9 @@ div.header {
     /* for the logo to correctly expand when showing results
        but remain cut when not */
     overflow: hidden;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    height: 57px;
 }
 
 
@@ -159,7 +163,8 @@ div.content-wrapper {
 }
 
 div.content {
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
     padding-bottom: 10px;
     padding-top: 20px;
 }

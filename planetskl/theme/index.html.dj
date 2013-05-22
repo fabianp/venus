@@ -5,17 +5,29 @@
   <title>{{ name }}</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="bland.css" type="text/css" />
+  <link rel="stylesheet" href="highlight.css" type="text/css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
 </head>
 
 <body>
 <div class="header-wrapper">
 <div class="header">
-  <p class="logo">
-  <img src="http://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Logo">
-</p>
-<div class="navbar">
-Voices from the scikit-learn community
-</div>
+<img src="http://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Logo">
+<p style="display: inline; margin: 5px 0 0 0; position: absolute; padding-left: 50px">Voices from the scikit-learn community</p>
 </div>
 </div>
 
@@ -23,23 +35,24 @@ Voices from the scikit-learn community
   <div class="content">
 <div id="channels">
   <h2>Feeds</h2>
-
   <ul>
     {% for channel in Channels %}
-    <li>{{ channel.title|safe }} by {{ channel.author_name }}</li>
+    <li><a href='{{channel.link}}'>{{channel.name}}</a> </li>
     {% endfor %}
   </ul>
-    last updated by <a href="http://intertwingly.net/code/venus/">Venus</a> 
-  on {{ date }} on behalf of {{ author_name }}
+  <p class="updated">
+    Last updated  on {{ date }} UTC.
+  </p>
 </div>
 
 {% for item in Items %}
-{% ifchanged item.channel_name %}
-<h3>{{ item.channel_name }}</h3>
-{% endifchanged %}
+
+<!-- {% ifchanged item.channel_name %}
+<h2><a href="{{ item.link }}">{{ item.channel_name }}</a></h2>
+{% endifchanged %} -->
 
 <div class="entry">
-  {% if item.title %}<h4>{{ item.title|safe }}</h4>{% endif %}
+  {% if item.title %}<h2><img style="float: right; margin-top: -20px; box-shadow: 5px 5px 5px #888888;" src="http://www.gravatar.com/avatar/{{item.channel_gravatar}}" /><a href="{{ item.link }}">{{ item.title|safe }}</a></h2>{% endif %}
 
   {{ item.content|safe }}
   
